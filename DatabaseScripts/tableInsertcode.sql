@@ -1,13 +1,15 @@
--- DROP TABLE Items;
+DROP TABLE Items;
 
--- CREATE TABLE Items (
---     ID INT primary key,
---     modifcation_name TEXT,
---     cost FLOAT,
---     stock INT,
---     active BOOLEAN
+CREATE TABLE Items (
+    ID INT primary key,
+    modifcation_name TEXT,
+    cost FLOAT,
+    stock INT,
+    active BOOLEAN
     
--- );
+);
+
+\copy Items FROM '/path/to/your_file.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERT INTO Items
 -- VALUES
