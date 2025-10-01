@@ -111,7 +111,7 @@ CREATE TABLE Past_Items (
     
 );
 
-\copy Past_Items from 'Past_Items.csv' DELIMITER ',' CSV HEADER;
+\copy Past_Items from '/Users/sowmithbonda/Semester 5/CSCE 331/project2_gang_34/seed/csv/past_items.csv' DELIMITER ',' CSV HEADER;
 
 DROP TABLE Past_Modifications;
 CREATE TABLE Past_Modifications (
@@ -123,7 +123,7 @@ CREATE TABLE Past_Modifications (
     custom_cost FLOAT
 );
 
-\copy Past_Modifications from 'Past_Modifications.csv' DELIMITER ',' CSV HEADER;
+\copy Past_Modifications from '/Users/sowmithbonda/Semester 5/CSCE 331/project2_gang_34/GeneratedData/past_modifications.csv' DELIMITER ',' CSV HEADER;
 
 DROP TABLE Past_Restocks;
 CREATE TABLE Past_Restocks (
@@ -140,4 +140,4 @@ CREATE TABLE Past_Restocks (
     
 );
 
-\copy Past_Restocks from 'Past_Restocks.csv' DELIMITER ',' CSV HEADER;
+\copy Past_Restocks from '/Users/sowmithbonda/Semester 5/CSCE 331/project2_gang_34/seed/csv/past_restocks.csv' DELIMITER ',' CSV HEADER;
