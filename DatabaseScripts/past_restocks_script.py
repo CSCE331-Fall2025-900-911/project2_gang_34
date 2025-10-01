@@ -22,19 +22,22 @@ dates = pd.Series(dates).dt.floor("h")
 # sort to make them incremental over time
 dates = pd.Series(dates).sort_values(ignore_index=True)
 
-# PAST_ITEMS DATA
+# Past restocks data
 df = pd.DataFrame({
     "id": [f"{i+1}" for i in range(N)],
-    "customer_id": [f"Customer ID {i+1}" for i in range(N)],
-    "order_id": [f"Order ID {i+1}" for i in range(N)],
-    "item_id": rng.integers(1, 17, size=N),                  # 1–16 inclusive
-    "custom_cost": rng.integers(1, 11, size=N) + 0.99,  # 1.99–10.99
-    "custom_note": ["n/a"] * N,                               # empty placeholder
-    "order_date": dates,
+    "item_id": rng.integers(1, 17, size=N),                    # 1–16 inclusive
+    "modification_id": [f"{i+1}" for i in range(N)],           # sequential IDs
+    "is_modification": rng.choice([True, False], size=N),      # boolean flag
+    "cost": rng.integers(1, 11, size=N) + 0.99,                # 1.99–10.99
+    "quantity": rng.integers(1, 6, size=N),                    # 1–5 quantity
+    "purchase_date": dates,                                    # random incremental dates
+    "custom_item": ["n/a"] * N,                                # placeholder
+    "custom_modification": ["n/a"] * N,                        # placeholder
+    "custom_note": ["n/a"] * N,    
 })
 
 
-out_path = Path("seed/csv/past_items.csv") # will create csv file in seed/csv folder on its own
+out_path = Path("seed/csv/past_restocks.csv") # will create csv file in seed/csv folder on its own
 out_path.parent.mkdir(parents=True, exist_ok=True)
 
 df.to_csv(out_path, index=False)

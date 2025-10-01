@@ -12,6 +12,7 @@ CREATE TABLE Items (
 
 
 INSERT INTO Items (ID, item_name, category, cost, stock, active)
+
 VALUES
 (0, 'Latte', 1, 5.99, 100, TRUE),
 (1, 'Americano', 1, 6.99, 100, TRUE),
