@@ -25,8 +25,8 @@ dates = pd.Series(dates).sort_values(ignore_index=True)
 # PAST_ITEMS DATA
 df = pd.DataFrame({
     "id": [f"{i+1}" for i in range(N)],
-    "customer_id": [f"Customer ID {i+1}" for i in range(N)],
-    "order_id": [f"Order ID {i+1}" for i in range(N)],
+    "customer_id": [f"{i+1}" for i in range(N)],
+    "order_id": [f"{i+1}" for i in range(N)],
     "item_id": rng.integers(1, 17, size=N),                  # 1–16 inclusive
     "custom_cost": rng.integers(1, 11, size=N) + 0.99,  # 1.99–10.99
     "custom_note": ["n/a"] * N,                               # empty placeholder
