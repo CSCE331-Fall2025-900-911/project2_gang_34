@@ -10,10 +10,24 @@ CREATE TABLE Items (
 );
 
 
--- INSERT INTO Items
--- VALUES
--- (00,'Latte', 5.99, 1, '1'),
--- (01, 'Americano', 6.99, 1, '1');
+INSERT INTO Items
+VALUES
+(00, 'Latte', 5.99, 1, '1'),
+(01, 'Americano', 6.99, 1, '1'),
+(02, 'Cappuccino', 5.49, 1, '1'),
+(03, 'Mocha', 6.49, 1, '1'),
+(04, 'Espresso', 3.99, 1, '1'),
+(05, 'Macchiato', 4.49, 1, '1'),
+(06, 'Flat White', 5.79, 1, '1'),
+(07, 'Cold Brew', 4.99, 1, '1'),
+(08, 'Iced Latte', 5.99, 1, '1'),
+(09, 'Iced Americano', 5.49, 1, '1'),
+(10, 'Chai Latte', 5.99, 1, '1'),
+(11, 'Matcha Latte', 6.29, 1, '1'),
+(12, 'Hot Chocolate', 4.79, 1, '1'),
+(13, 'Caramel Frappuccino', 6.99, 1, '1'),
+(14, 'Vanilla Bean Frappuccino', 6.79, 1, '1'),
+(15, 'Strawberry Smoothie', 6.49, 1, '1');
 
 -- SELECT * FROM Items;
 
@@ -35,16 +49,21 @@ CREATE TABLE Current_Items (
 
 DROP TABLE Modifications;
 
-CREATE TABLE Modifications (
-    ID INT primary key,
-    modificaion_name TEXT,
-    item_ID INT,
-    cost FLOAT,
-    stock INT,
-    mod_type TEXT,
-    active BOOLEAN 
-    
-);
+INSERT INTO Modifications
+VALUES
+(1, 'Extra Espresso Shot', 0, 1.50, 100, 'add-on', TRUE),
+(2, 'Vanilla Syrup', 0, 0.75, 80, 'flavor', TRUE),
+(3, 'Caramel Syrup', 0, 0.75, 75, 'flavor', TRUE),
+(4, 'Hazelnut Syrup', 0, 0.75, 70, 'flavor', TRUE),
+(5, 'Oat Milk', 0, 0.50, 60, 'milk', TRUE),
+(6, 'Almond Milk', 0, 0.50, 60, 'milk', TRUE),
+(7, 'Soy Milk', 0, 0.50, 50, 'milk', TRUE),
+(8, 'Whipped Cream', 0, 0.60, 90, 'topping', TRUE),
+(9, 'Cocoa Powder', 0, 0.30, 100, 'topping', TRUE),
+(10, 'Cinnamon Sprinkle', 0, 0.25, 100, 'topping', TRUE),
+(11, 'Large Cup Upgrade', 0, 1.00, 200, 'size', TRUE),
+(12, 'Iced Option', 0, 0.00, 999, 'preparation', TRUE);
+
 
 
 DROP TABLE Current_Modifications;
