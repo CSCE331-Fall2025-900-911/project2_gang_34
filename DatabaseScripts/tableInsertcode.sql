@@ -3,6 +3,7 @@ DROP TABLE Items;
 CREATE TABLE Items (
     ID INT primary key,
     item_name TEXT,
+    category INT,
     cost FLOAT,
     stock INT,
     active BOOLEAN
@@ -47,6 +48,17 @@ CREATE TABLE Current_Items (
 -- SELECT * FROM Current_Items;
 
 DROP TABLE Modifications;
+
+CREATE TABLE Modifications (
+    ID INT primary key,
+    modificaion_name TEXT,
+    item_ID INT,
+    cost FLOAT,
+    stock INT,
+    mod_type TEXT,
+    active BOOLEAN 
+
+);
 
 INSERT INTO Modifications
 VALUES
