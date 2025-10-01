@@ -1,6 +1,6 @@
 -- test
 -- 1) Sanity check: What items are in the catalog (id, name, price)?
-SELECT id, name, price
+SELECT id, item_name, price
 FROM items
 ORDER BY id;
 
@@ -11,7 +11,7 @@ SELECT COUNT(*) AS item_count,
 FROM items;
 
 -- 3) Premium menu scan: What are the top 5 most expensive items?
-SELECT id, name, price
+SELECT id, item_name, price
 FROM items
 ORDER BY price DESC, id
 LIMIT 5;
@@ -22,14 +22,14 @@ SELECT category_id,
        ROUND(AVG(price)::numeric, 2) AS avg_price,
        COUNT(*) AS items_in_category
 FROM (
-  SELECT id, name, price, CAST(column4 AS int) AS category_id  -- replace column4 with real column name if different
+  SELECT id, item_name, price, CAST(column4 AS int) AS category_id  -- replace column4 with real column name if different
   FROM items
 ) t
 GROUP BY category_id
 ORDER BY category_id;
 
 -- 5) Middle-price band: Which items are priced between $5.00 and $6.50?
-SELECT id, name, price
+SELECT id, item_name, price
 FROM items
 WHERE price BETWEEN 5.00 AND 6.50
 ORDER BY price, id;
@@ -83,7 +83,7 @@ ORDER BY i.id;
 -- 11) “Build-a-drink” sanity: Show 3 random items with 3 random active mods, computing totals.
 -- Useful to quickly eyeball combinations during a demo.
 WITH rand_items AS (
-  SELECT id, name, price
+  SELECT id, item_name, price
   FROM items
   ORDER BY RANDOM()
   LIMIT 3
@@ -105,14 +105,14 @@ ORDER BY item_id, mod_id;
 -- 12) Menu quality check: Are there any duplicate item names or negative prices (data issues)?
 -- First part: duplicates; second part: invalid prices. If both return empty, data quality looks good.
 -- 12a) Duplicate names
-SELECT name, COUNT(*) AS occurrences
+SELECT item_name, COUNT(*) AS occurrences
 FROM items
-GROUP BY name
+GROUP BY item_name
 HAVING COUNT(*) > 1
-ORDER BY occurrences DESC, name;
+ORDER BY occurrences DESC, item_name;
 
 -- 12b) Invalid/negative prices
-SELECT id, name, price
+SELECT id, item_name, price
 FROM items
 WHERE price IS NULL OR price < 0
 ORDER BY id;
