@@ -54,7 +54,7 @@ ORDER BY mod_type;
 -- 8) Out-of-stock check: Which modifications are out of stock (or critically low)?
 SELECT id, modificaion_name AS modification_name, stock, mod_type
 FROM modifications
-WHERE stock <= 0
+WHERE stock <= 60
    OR stock IS NULL
 ORDER BY stock NULLS FIRST, id;
 
