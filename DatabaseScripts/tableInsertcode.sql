@@ -8,8 +8,9 @@ CREATE TABLE Items (
     active BOOLEAN
     
 );
-
-\copy Items FROM '../GeneratedData/Items.csv' DELIMITER ',' CSV HEADER;
+-- add hardcoded insert of menu items and other items and custom
+INSERT INTO Items (ID,item_name,cost,stock,active) VALUES (0,Latte,5.99,100,1),(1,Americano,6.99,100,1),(2,"Cappuccino",7.99,100,1),(3,"Ristretto",6.99,100,1),(4,"Cortado",7.99,100,1),(5,"Espresso",6.99,100,1),(6,"Mocha",5.99,100,1),(7,"Robusta",6.99,100,1),(8,"Doppio",7.99,100,1),(9,"Frappuccino",6.99,100,1),(10,"Water",1.29,100,1),(11,"Chocolate Pastry",3.99,100,1),(12,"Cookie",3.99,100,1),(13,"Egg Sandwitch",4.99,100,1),(14,"Sausage Sandwitch",4.99,100,1),(15,"Breakfast Sandwitch",4.99,100,1),(16,"Croissont",3.99,100,1);
+-- \copy Items FROM '../GeneratedData/Items.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERT INTO Items
 -- VALUES
@@ -47,7 +48,9 @@ CREATE TABLE Modifications (
     active BOOLEAN 
     
 );
-\copy Items FROM '../GeneratedData/Modifications.csv' DELIMITER ',' CSV HEADER;
+-- add hardcoded insert of menu modifications and custom
+INSERT INTO Modifications (ID,modificaion_name,item_ID,cost,stock,mod_type,active) VALUES (0,"Cream",0,0.99,100,1,1),(1,"Cream",1,0.99,100,1,1),(2,"Cream",2,0.99,100,1,1),(3,"Cream",3,0.99,100,1,1),(4,"Cream",4,0.99,100,1,1),(5,"Cream",5,0.99,100,1,1),(6,"Cream",6,0.99,100,1,1),(7,"Cream",7,0.99,100,1,1),(8,"Cream",8,0.99,100,1,1),(9,"Cream",9,0.99,100,1,1),(10,"Cream",10,0.99,100,1,1),(11,"Toasted",11,0.49,100,3,1),(12,"Toasted",12,0.49,100,3,1),(13,"Toasted",13,0.49,100,3,1),(14,"Toasted",14,0.49,100,3,1),(15,"Toasted",15,0.49,100,3,1),(16,"Toasted",16,0.49,100,3,1);
+--\copy Items FROM '../GeneratedData/Modifications.csv' DELIMITER ',' CSV HEADER;
 
 
 DROP TABLE CurrentModifications;
