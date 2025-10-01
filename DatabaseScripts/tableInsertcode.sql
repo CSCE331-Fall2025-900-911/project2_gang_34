@@ -9,7 +9,6 @@ CREATE TABLE Items (
     
 );
 
-\copy Items FROM '../GeneratedData/Items.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERT INTO Items
 -- VALUES
@@ -18,7 +17,7 @@ CREATE TABLE Items (
 
 -- SELECT * FROM Items;
 
-DROP TABLE CurrentItems;
+DROP TABLE Current_Items;
 
 CREATE TABLE Current_Items (
     ID INT primary key,
@@ -27,7 +26,6 @@ CREATE TABLE Current_Items (
     custom_note TEXT
     
 );
-\copy Items FROM '../GeneratedData/Current_Items.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERT INTO CurrentItems
 -- VALUES
@@ -47,10 +45,9 @@ CREATE TABLE Modifications (
     active BOOLEAN 
     
 );
-\copy Items FROM '../GeneratedData/Modifications.csv' DELIMITER ',' CSV HEADER;
 
 
-DROP TABLE CurrentModifications;
+DROP TABLE Current_Modifications;
 
 CREATE TABLE Current_Modifications (
     ID INT primary key,
@@ -59,8 +56,8 @@ CREATE TABLE Current_Modifications (
     custom_cost FLOAT
     
 );
-\copy Items FROM '../GeneratedData/Current_Modifications.csv' DELIMITER ',' CSV HEADER;
 
+DROP TABLE Suggested_Restocks;
 CREATE TABLE Suggested_Restocks (
     ID INT primary key,
     item_ID INT,
@@ -70,6 +67,7 @@ CREATE TABLE Suggested_Restocks (
     recommended_quantity INT
 );
 
+DROP TABLE Past_Items;
 CREATE TABLE Past_Items (
     ID INT primary key,
     customer_ID INT,
@@ -80,8 +78,9 @@ CREATE TABLE Past_Items (
     
 );
 
-\copy Past_Items from 'Past_Items.csv' DELIMITER ',' CSV HEADER
+\copy Past_Items from 'Past_Items.csv' DELIMITER ',' CSV HEADER;
 
+DROP TABLE Past_Modifications;
 CREATE TABLE Past_Modifications (
     ID INT primary key,
     customer_ID INT,
@@ -91,21 +90,21 @@ CREATE TABLE Past_Modifications (
     custom_cost FLOAT
 );
 
-\copy Past_Modifications from 'Past_Modifications.csv' DELIMITER ',' CSV HEADER
+\copy Past_Modifications from 'Past_Modifications.csv' DELIMITER ',' CSV HEADER;
 
+DROP TABLE Past_Restocks;
 CREATE TABLE Past_Restocks (
-    odification ID	Is Modification	Cost	Quantity	Date	Custom Item	Custom Modification	Custom Note
     ID INT primary key,
     item_ID INT,
     modification_ID INT,
     is_modification BOOLEAN,
     cost FLOAT,
     quantity INT,
-    purchase_date DATE
+    purchase_date DATE,
     custom_item TEXT,
     custom_modification TEXT,
     custom_note TEXT
     
 );
 
-\copy Past_Restocks from 'Past_Restocks.csv' DELIMITER ',' CSV HEADER
+\copy Past_Restocks from 'Past_Restocks.csv' DELIMITER ',' CSV HEADER;
