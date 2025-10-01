@@ -11,24 +11,24 @@ CREATE TABLE Items (
 );
 
 
-INSERT INTO Items
+INSERT INTO Items (ID, item_name, category, cost, stock, active)
 VALUES
-(00, 'Latte', 5.99, 1, '1'),
-(01, 'Americano', 6.99, 1, '1'),
-(02, 'Cappuccino', 5.49, 1, '1'),
-(03, 'Mocha', 6.49, 1, '1'),
-(04, 'Espresso', 3.99, 1, '1'),
-(05, 'Macchiato', 4.49, 1, '1'),
-(06, 'Flat White', 5.79, 1, '1'),
-(07, 'Cold Brew', 4.99, 1, '1'),
-(08, 'Iced Latte', 5.99, 1, '1'),
-(09, 'Iced Americano', 5.49, 1, '1'),
-(10, 'Chai Latte', 5.99, 1, '1'),
-(11, 'Matcha Latte', 6.29, 1, '1'),
-(12, 'Hot Chocolate', 4.79, 1, '1'),
-(13, 'Caramel Frappuccino', 6.99, 1, '1'),
-(14, 'Vanilla Bean Frappuccino', 6.79, 1, '1'),
-(15, 'Strawberry Smoothie', 6.49, 1, '1');
+(0, 'Latte', 1, 5.99, 100, TRUE),
+(1, 'Americano', 1, 6.99, 100, TRUE),
+(2, 'Cappuccino', 1, 5.49, 100, TRUE),
+(3, 'Mocha', 1, 6.49, 100, TRUE),
+(4, 'Espresso', 1, 3.99, 100, TRUE),
+(5, 'Macchiato', 1, 4.49, 100, TRUE),
+(6, 'Flat White', 1, 5.79, 100, TRUE),
+(7, 'Cold Brew', 1, 4.99, 100, TRUE),
+(8, 'Iced Latte', 1, 5.99, 100, TRUE),
+(9, 'Iced Americano', 1, 5.49, 100, TRUE),
+(10, 'Chai Latte', 1, 5.99, 100, TRUE),
+(11, 'Matcha Latte', 1, 6.29, 100, TRUE),
+(12, 'Hot Chocolate', 1, 4.79, 100, TRUE),
+(13, 'Caramel Frappuccino', 1, 6.99, 100, TRUE),
+(14, 'Vanilla Bean Frappuccino', 1, 6.79, 100, TRUE),
+(15, 'Strawberry Smoothie', 1, 6.49, 100, TRUE);
 
 -- SELECT * FROM Items;
 
@@ -63,18 +63,18 @@ CREATE TABLE Modifications (
 
 INSERT INTO Modifications
 VALUES
-(1, 'Extra Espresso Shot', 0, 1.50, 100, 'add-on', TRUE),
-(2, 'Vanilla Syrup', 0, 0.75, 80, 'flavor', TRUE),
-(3, 'Caramel Syrup', 0, 0.75, 75, 'flavor', TRUE),
-(4, 'Hazelnut Syrup', 0, 0.75, 70, 'flavor', TRUE),
-(5, 'Oat Milk', 0, 0.50, 60, 'milk', TRUE),
-(6, 'Almond Milk', 0, 0.50, 60, 'milk', TRUE),
-(7, 'Soy Milk', 0, 0.50, 50, 'milk', TRUE),
-(8, 'Whipped Cream', 0, 0.60, 90, 'topping', TRUE),
-(9, 'Cocoa Powder', 0, 0.30, 100, 'topping', TRUE),
-(10, 'Cinnamon Sprinkle', 0, 0.25, 100, 'topping', TRUE),
-(11, 'Large Cup Upgrade', 0, 1.00, 200, 'size', TRUE),
-(12, 'Iced Option', 0, 0.00, 999, 'preparation', TRUE);
+(1, 'Extra Espresso Shot', 1, 1.50, 100, 'add-on', TRUE),
+(2, 'Vanilla Syrup', 1, 0.75, 80, 'flavor', TRUE),
+(3, 'Caramel Syrup', 1, 0.75, 75, 'flavor', TRUE),
+(4, 'Hazelnut Syrup', 1, 0.75, 70, 'flavor', TRUE),
+(5, 'Oat Milk', 1, 0.50, 60, 'milk', TRUE),
+(6, 'Almond Milk', 1, 0.50, 60, 'milk', TRUE),
+(7, 'Soy Milk', 1, 0.50, 50, 'milk', TRUE),
+(8, 'Whipped Cream', 1, 0.60, 90, 'topping', TRUE),
+(9, 'Cocoa Powder', 1, 0.30, 100, 'topping', TRUE),
+(10, 'Cinnamon Sprinkle', 1, 0.25, 100, 'topping', TRUE),
+(11, 'Large Cup Upgrade', 1, 1.00, 200, 'size', TRUE),
+(12, 'Iced Option', 1, 0.00, 999, 'preparation', TRUE);
 
 
 
@@ -105,7 +105,8 @@ CREATE TABLE Past_Items (
     order_ID INT,
     item_ID INT,
     custom_cost FLOAT,
-    custom_note TEXT
+    custom_note TEXT,
+    order_date DATE
     
 );
 
