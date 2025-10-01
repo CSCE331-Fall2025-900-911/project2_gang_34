@@ -9,7 +9,7 @@ CREATE TABLE Items (
     
 );
 
--- \copy Items FROM '/path/to/your_file.csv' DELIMITER ',' CSV HEADER;
+\copy Items FROM '../GeneratedData/Items.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERT INTO Items
 -- VALUES
@@ -27,6 +27,7 @@ CREATE TABLE Current_Items (
     custom_note TEXT
     
 );
+\copy Items FROM '../GeneratedData/Current_Items.csv' DELIMITER ',' CSV HEADER;
 
 -- INSERT INTO CurrentItems
 -- VALUES
@@ -46,6 +47,7 @@ CREATE TABLE Modifications (
     active BOOLEAN 
     
 );
+\copy Items FROM '../GeneratedData/Modifications.csv' DELIMITER ',' CSV HEADER;
 
 
 DROP TABLE CurrentModifications;
@@ -57,3 +59,4 @@ CREATE TABLE Current_Modifications (
     custom_cost FLOAT
     
 );
+\copy Items FROM '../GeneratedData/Current_Modifications.csv' DELIMITER ',' CSV HEADER;
