@@ -30,7 +30,7 @@ df = pd.DataFrame({
     "item_id": rng.integers(1, 17, size=N),                  # 1–16 inclusive
     "custom_cost": rng.integers(1, 11, size=N) + 0.99,  # 1.99–10.99
     "custom_note": ["n/a"] * N,                               # empty placeholder
-    "date": dates,
+    "order_date": dates,
 })
 
 
