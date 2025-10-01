@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-N = 100
+N = 750000
 
 rng = np.random.default_rng(seed=42)  # set the seed for reproducibility
 
