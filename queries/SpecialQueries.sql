@@ -1,13 +1,32 @@
 -- Special Query 1
 SELECT
-    DATEPART(WEEK, date) AS week_number,
+    EXTRACT(WEEK FROM order_date) AS week_number,
     COUNT(DISTINCT order_id) AS total_orders
 FROM past_items
-GROUP BY DATEPART(WEEK, date)
+GROUP BY EXTRACT(WEEK FROM order_date)
 ORDER BY week_number;
 
---Realistic Sales History: select count of orders, sum of order total grouped by hour
-SELECT count(order_id) as num_orders, sum(price) as total_sales from (select order_id, price from Past_Items union all select order_id, price from Past_Modifications) group by strftime('%H', order_date);
---Peak Sales Day: select top 10 sums of order total grouped by day in descending order by order total
-SELECT (day_item_total+day_modification_total) as day_order_total from ((select sum(price) as day_item_total from Past_Items group by order_date) inner join (select sum(price) as day_modification_total from Past_Modifications group by order_date));
 
+-- Special Query 2
+SELECT
+    EXTRACT(HOUR FROM order_date) AS hour_of_day,
+    COUNT(DISTINCT order_id) AS total_orders,
+    SUM(custom_cost) AS total_sales
+FROM past_items
+GROUP BY EXTRACT(HOUR FROM order_date)
+ORDER BY hour_of_day;
+
+
+-- Special Query 3
+SELECT
+    CAST(order_date AS DATE) AS sales_day,
+    SUM(custom_cost) AS total_sales
+FROM past_items
+GROUP BY CAST(order_date AS DATE)
+ORDER BY total_sales DESC
+LIMIT 10;
+
+
+-- Special Query 5
+
+-- Special Query 6
