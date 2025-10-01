@@ -53,7 +53,7 @@ DROP TABLE Modifications;
 CREATE TABLE Modifications (
     ID INT primary key,
     modificaion_name TEXT,
-    item_ID INT,
+    category INT,
     cost FLOAT,
     stock INT,
     mod_type TEXT,
