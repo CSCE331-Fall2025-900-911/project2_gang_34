@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-N = 100  # number of rows
+N = 750000  # number of rows
 
 rng = np.random.default_rng(seed=30)  # gave seed for same script output every run
 
