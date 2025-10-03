@@ -3,7 +3,7 @@
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "python-envs.pythonProjects": [],
 
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": ["src/app"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
