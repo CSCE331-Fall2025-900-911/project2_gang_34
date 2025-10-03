@@ -6,7 +6,7 @@
             "name": "Launch JavaFX Application",
             "request": "launch",
             "mainClass": "app.App",
-            "vmArgs": "--module-path \"C:/CSCE314_Java/JavaFXProject/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/CSCE331/project_2_gang_34/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
